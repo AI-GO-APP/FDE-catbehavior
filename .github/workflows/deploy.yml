@@ -1,0 +1,27 @@
+name: Deploy to Staging
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+concurrency:
+  group: staging-deploy-fde-catbehavior
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: SSH and Deploy
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.STAGING_HOST }}
+        username: deploy
+        key: ${{ secrets.STAGING_SSH_KEY }}
+        script: |
+          cd /opt/apps/FDE-catbehavior
+          git fetch origin main
+          git reset --hard FETCH_HEAD
+          cd cat_chat_app
+          docker compose -f docker-compose.staging.yml up -d --build
