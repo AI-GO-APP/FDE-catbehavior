@@ -1,5 +1,5 @@
 # 第一階段：編譯前端資源
-FROM instrumentisto/flutter:3.24 AS build
+FROM ghcr.io/cirruslabs/flutter:stable AS build
 WORKDIR /app
 
 # 複製 pubspec 並取得套件
