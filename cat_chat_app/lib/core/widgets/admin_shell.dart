@@ -50,19 +50,21 @@ class AdminShell extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 64,
+            height: 90,
             alignment: Alignment.centerLeft,
-            padding: const EdgeInsets.symmetric(horizontal: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             decoration: BoxDecoration(
               border: Border(bottom: BorderSide(color: Colors.grey.shade200)),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
                   'CatChat Admin',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
+                const SizedBox(height: 4),
                 _buildRoleSwitcher(isMobile: false),
               ],
             ),
@@ -119,14 +121,6 @@ class AdminShell extends StatelessWidget {
                 route: AppRoutes.adminCourses,
                 isSelected: location == AppRoutes.adminCourses || location.startsWith('/admin/course/'),
               ),
-            const Divider(),
-            _buildListTile(
-              context,
-              icon: Icons.exit_to_app,
-              title: '返回使用者版',
-              route: AppRoutes.home,
-              isSelected: false,
-            ),
           ],
         );
       },
