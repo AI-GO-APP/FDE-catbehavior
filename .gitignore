@@ -1,0 +1,11 @@
+# Flutter SDK (User-installed locally in this folder)
+/flutter/
+
+# Standard IDE and OS ignores
+.idea/
+.vscode/
+*.iml
+.DS_Store
+
+# Logs
+*.log
