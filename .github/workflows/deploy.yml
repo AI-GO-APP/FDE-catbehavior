@@ -24,4 +24,4 @@ jobs:
           git fetch origin main
           git reset --hard FETCH_HEAD
           cd cat_chat_app
-          docker compose -f docker-compose.staging.yml up -d --build
+          docker-compose -f docker-compose.staging.yml up -d --build
