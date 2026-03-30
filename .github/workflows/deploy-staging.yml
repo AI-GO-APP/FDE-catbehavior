@@ -20,4 +20,5 @@ jobs:
     uses: AI-GO-APP/.github/.github/workflows/staging-deploy.yml@main
     with:
       project-name: ${{ github.event.repository.name }}
+      port: '3004'
     secrets: inherit
