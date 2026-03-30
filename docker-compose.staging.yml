@@ -6,5 +6,5 @@ services:
       context: ./cat_chat_app
       dockerfile: Dockerfile
     ports:
-      - "${PORT:-3001}:80"
+      - "3001:80"
     restart: always
