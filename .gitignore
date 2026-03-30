@@ -9,8 +9,8 @@
 
 # Logs and analysis outputs
 *.log
-*.txt
-!README.md
+compile_error.txt
+compile_errors.txt
 
 # Sensitive key files
 *-deploy-key
