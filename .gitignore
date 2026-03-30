@@ -7,5 +7,14 @@
 *.iml
 .DS_Store
 
-# Logs
+# Logs and analysis outputs
 *.log
+*.txt
+!README.md
+
+# Sensitive key files
+*-deploy-key
+*-deploy-key.pub
+gh_action_key*
+*.pem
+*.key
